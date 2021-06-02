@@ -21,7 +21,7 @@ module Emails
     private
 
     def remote_validate
-      # sleep 1 # API fails when requested several times in a second window
+      sleep 1 # API fails when requested several times in a second window
       Rails.logger.info "Requesting Email Check: #{@email}"
 
       response = self.class.get(
