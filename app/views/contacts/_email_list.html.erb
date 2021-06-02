@@ -1,0 +1,11 @@
+<% if emails.present? %>
+  <h4 class="text-secondary">Results</h4>
+
+  <ul class="list-unstyled">
+    <% emails.each do |email| %>
+      <li class="<%= email.id == found_email&.id ? 'text-success' : '' %> fs-4">
+        <%= email.email %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

@@ -1,0 +1,6 @@
+<% if @errors.present? %>
+  document.getElementById('lookup-notice').innerHTML = "<%= @errors.first %>";
+<% end %>
+
+document.getElementById('submit-btn').disabled = false;
+document.getElementById('submit-btn').value = 'Search';

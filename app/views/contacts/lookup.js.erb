@@ -1,0 +1,9 @@
+<% if @email.present? %>
+  document.getElementById('lookup-notice').innerHTML = 'Found an email!';
+  document.getElementById('valid-emails-list').innerHTML = "<%= j render('email_list', emails: @emails, found_email: @email) %>";
+<% else %>
+  document.getElementById('lookup-notice').innerHTML = "Couldn't find any valid emails";
+<% end %>
+
+document.getElementById('submit-btn').disabled = false;
+document.getElementById('submit-btn').value = 'Search';

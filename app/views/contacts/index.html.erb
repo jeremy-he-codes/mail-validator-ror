@@ -1,0 +1,11 @@
+<div class="container-sm mt-5" style="max-width: 600px;">
+  <h3>E-Mail Validator</h3>
+
+  <div id="lookup-notice" class="alert alert-light"></div>
+
+  <%= render 'form' %>
+
+  <div id="valid-emails-list" class="mt-5">
+    <%= render 'email_list', emails: @emails, found_email: @email %>
+  </div>
+</div>

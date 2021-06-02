@@ -1,0 +1,28 @@
+<%= form_for :contact, url: lookup_path, method: :get, remote: true, html: { :onsubmit => "onSubmit()" } do |f| %>
+  <div class="form-group mb-3">
+    <label for="contact_first_name" class="form-label">First Name</label>
+    <%= f.text_field :first_name, required: true, class: 'form-control' %>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="contact_last_name" class="form-label">Last Name</label>
+    <%= f.text_field :last_name, required: true, class: 'form-control' %>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="contact_url" class="form-label">URL</label>
+    <%= f.text_field :url, required: true, class: 'form-control' %>
+  </div>
+
+  <div class="d-grid">
+    <%= f.submit 'Search', id: 'submit-btn', class: 'btn btn-primary' %>
+  </div>
+<% end %>
+
+<script>
+  function onSubmit() {
+    document.getElementById('submit-btn').value = 'Looking up...';
+    document.getElementById('submit-btn').disabled = true;
+    document.getElementById('lookup-notice').innerHTML = '';
+  }
+</script>
